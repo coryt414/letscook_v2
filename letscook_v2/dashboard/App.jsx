@@ -2,12 +2,22 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 function App() {
-  const [data, setData] = useState(null);
+  const [ingredients, setIngredients] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/api/data')
+    axios.get('http://localhost:3000/api/recipes')
       .then(response => {
-        setData(response.data);
+        setIngredients(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
+
+  useEffect(() => {
+    axios.get('http://localhost:3000/api/ingredients')
+      .then(response => {
+        setIngredients(response.data);
       })
       .catch(error => {
         console.error('Error fetching data:', error);
@@ -16,8 +26,16 @@ function App() {
 
   return (
     <div>
-      <h1>Backend Data</h1>
-      {data ? <p>{data.message}</p> : <p>Loading...</p>}
+      <h1>Ingredient Data</h1>
+      {ingredients.length > 0 ? (
+        <ul>
+          {ingredients.map(ingredients => (
+            <ul key={ingredients.ingredient_id}>{ingredients.ingredient_name}</ul>
+          ))}
+        </ul>
+      ) : (
+        <p>Loading...</p>
+      )}
     </div>
   );
 }
