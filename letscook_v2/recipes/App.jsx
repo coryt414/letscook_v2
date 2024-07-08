@@ -46,7 +46,7 @@ function App() {
             <Card shadow="sm" padding="lg" radius="md" withBorder>
             <Card.Section>
               <Image
-                src={`/public/Recipe_Images/${recipes.name}.jpg`}
+                src={`/Recipe_Images/${recipes.name}.jpg`}
                 height={250}
                 alt={recipes.name}
               />
