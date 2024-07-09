@@ -3,7 +3,8 @@ import axios from 'axios';
 import '@mantine/core/styles.css';
 
 import { MantineProvider } from '@mantine/core';
-import { Card, Image, Text, Badge, Button, Group, List, Flex, ThemeIcon } from '@mantine/core';
+import { Button, Card, Image, Text, Badge, Group, List, Flex, ThemeIcon } from '@mantine/core';
+import AddToCart from '../components/Button';
 
 function App() {
   const [recipes, setRecipes] = useState([]);
@@ -66,13 +67,13 @@ function App() {
               </ThemeIcon>
               }>
               {recipes.ingredients.map(ingredients => (
-                <List.Item>{ingredients.name}</List.Item>
+                <List.Item key={ingredients.id}>{ingredients.name}</List.Item>
               ))}
             </List>
             </Flex>
-            <Button color="blue" fullWidth mt="md" radius="md">
-              Book classic tour now
-            </Button>
+            <AddToCart>
+              Add to Shopping List!
+            </AddToCart>
           </Card>
         ))
     ) : (
