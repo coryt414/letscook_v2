@@ -71,7 +71,8 @@ function App() {
               ))}
             </List>
             </Flex>
-            <AddToCart>
+            <AddToCart
+            ingredients= {recipes.ingredients}>
               Add to Shopping List!
             </AddToCart>
           </Card>
