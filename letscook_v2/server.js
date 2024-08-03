@@ -13,6 +13,10 @@ app.get('/api/data', (req, res) => {
 
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
+  console.log(`To get test message, go to http://localhost:${port}/api/data`);
+  console.log(`or try, http://localhost:${port}/api/recipes for application specific data`);
+  console.log(`also, make sure to verify that the AWS database is running.`);
+  console.log(`To run the node dev server, use the command 'npm run dev'`);
 });
 
 app.get('/api/recipes', async (req, res) => {
