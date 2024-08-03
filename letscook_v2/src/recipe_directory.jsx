@@ -6,7 +6,7 @@ import { MantineProvider } from '@mantine/core';
 import { Button, Card, Image, Text, Badge, Group, List, Flex, ThemeIcon } from '@mantine/core';
 import AddToCart from '../components/Button';
 
-function App() {
+function Recipe_directory() {
   const [recipes, setRecipes] = useState([]);
   const [ingredients, setIngredients] = useState([]);
 
@@ -86,4 +86,4 @@ function App() {
   );
 }
 
-export default App;
+export default Recipe_directory;

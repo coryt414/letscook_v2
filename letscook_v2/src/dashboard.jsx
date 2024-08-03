@@ -1,18 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-function App() {
+function Dashboard() {
   const [ingredients, setIngredients] = useState([]);
 
-  useEffect(() => {
-    axios.get('http://localhost:3000/api/recipes')
-      .then(response => {
-        setIngredients(response.data);
-      })
-      .catch(error => {
-        console.error('Error fetching data:', error);
-      });
-  }, []);
 
   useEffect(() => {
     axios.get('http://localhost:3000/api/ingredients')
@@ -40,4 +31,4 @@ function App() {
   );
 }
 
-export default App;
+export default Dashboard;
