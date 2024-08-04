@@ -1,28 +1,24 @@
 import React from 'react';
-import { useEffect, useState, useContext } from 'react';
+import Product from './components/Product';
+import Cart from './components/Cart';
 
-// Create Cart Context
-const CartContext = createContext();
+const products = [
+  {id: 1, name: 'Product 1'},
+  {id: 2, name: 'Product 2'},
+];
 
-// Cart Provider Component
-export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState([]);
-
-  const addToCart = (item) => {
-    setCart((prevCart) => {
-      const itemIndex
-    })
-  }
-}
-
-
-const Cart = () => {
+function CartPage() {
   return (
     <div>
-      <h1>Cart Page</h1>
-      <p>Your ingredients here!</p>
+      <h1>My Shopping Cart</h1>
+      <div>
+        {products.map((product) => (
+          <Product key={product.id} product={product} />
+        ))}
+      </div>
+      <Cart />
     </div>
   );
-};
+}
 
-export default Cart;
+export default CartPage;

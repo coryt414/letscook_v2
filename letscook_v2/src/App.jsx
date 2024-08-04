@@ -3,7 +3,7 @@ import './App.css'
 import '@mantine/core/styles.css';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Dashboard from './dashboard';
-import Cart from './cart';
+import CartPage from './cart';
 import Recipe_directory from './recipe_directory';
 
 
@@ -25,7 +25,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/recipe_directory" element={<Recipe_directory />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/cart" element={<CartPage />} />
       </Routes>
     </Router>
   );

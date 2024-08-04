@@ -3,8 +3,8 @@ import axios from 'axios';
 import '@mantine/core/styles.css';
 
 import { MantineProvider } from '@mantine/core';
-import { Button, Card, Image, Text, Badge, Group, List, Flex, ThemeIcon } from '@mantine/core';
-import AddToCart from '../components/Button';
+import { Card, Image, Text, Badge, Group, List, Flex, ThemeIcon } from '@mantine/core';
+// import AddToCart from './components/Button';
 
 function Recipe_directory() {
   const [recipes, setRecipes] = useState([]);
