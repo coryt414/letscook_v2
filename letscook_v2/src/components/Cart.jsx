@@ -6,17 +6,24 @@ const Cart = () => {
 
     return (
         <div>
-            <h2>Cart</h2>
             {cart.length ===0 ? (
                 <p>Your cart is empty</p>
             ) : (
                 <ul>
+                    {/* <p>{JSON.stringify(cart)}</p> */}
                     {cart.map((item) => (
-                        <li key={item.id}>
-                            {item.name} - Quantity: {item.quantity}
+                        <div key={item.id}>
+                            <h2>{item.name}</h2>
+                            <ul>
+                                {item.ingredients.map((ingredient) => (
+                                    <li key={ingredient.id}>{ingredient.name}</li>
+                                ))}
+                            </ul>
+                            {/* {item.name} - Quantity: {item.quantity} */}
                             <button onClick={() => removeFromCart(item.id)}>Remove</button>
-                        </li>
+                        </div>
                     ))}
+
                 </ul>
             )}
             <button onClick={clearCart}>Clear Cart</button>
