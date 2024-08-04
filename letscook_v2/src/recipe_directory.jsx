@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '@mantine/core/styles.css';
+import Product from './components/Product';
+
 
 import { MantineProvider } from '@mantine/core';
 import { Card, Image, Text, Badge, Group, List, Flex, ThemeIcon } from '@mantine/core';
@@ -55,7 +57,7 @@ function Recipe_directory() {
       
             <Group justify="space-between" mt="md" mb="xs">
               <Text fw={500}>{recipes.name}</Text>
-              <Badge color="pink">On Sale</Badge>
+              {/* <Badge color="pink">On Sale</Badge> */}
             </Group>
             <Flex>
             <List
@@ -71,10 +73,7 @@ function Recipe_directory() {
               ))}
             </List>
             </Flex>
-            <AddToCart
-            ingredients= {recipes.ingredients}>
-              Add to Shopping List!
-            </AddToCart>
+            <Product key={recipes.id} product={recipes} />
           </Card>
         ))
     ) : (
